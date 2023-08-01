@@ -10,10 +10,8 @@ float doubleCubicSeatWithLinearBlend(float x, float a, float b) {
     a = min(max_param_a, max(min_param_a, a));
     b = min(max_param_b, max(min_param_b, b));
     
-    float y = 0.0;
     if (x <= a)
-        y = b*x + (1.0 - b) * a * (1.0 - pow(1.0 - x/a, 3.0));
+        return b*x + (1.0 - b) * a * (1.0 - pow(1.0 - x/a, 3.0));
     else
-        y = b*x + (1.0 - b) * (a + (1.0 - a) * pow((x - a) / (1.0 - a), 3.0));
-    return y;
+        return b*x + (1.0 - b) * (a + (1.0 - a) * pow((x - a) / (1.0 - a), 3.0));
 }
